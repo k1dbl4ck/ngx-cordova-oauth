@@ -29,5 +29,9 @@
     },
     "bugs": {
         "url": "https://github.com/nraboy/ng2-cordova-oauth/issues"
+    },
+    "dependencies": {
+        "@angular/common": "^6.0.3",
+        "@angular/core": "^6.0.3"
     }
 }

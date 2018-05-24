@@ -15,8 +15,11 @@ export class OauthBrowser extends Oauth {
         const title = windowParams.title;
         delete windowParams.title;
 
+        console.log("CALLING oAUTH WITH : ", url); 
+
         const popup = window.open(url, title, this.serializeOptions(windowParams))
         const watchDelay = (<any>this.constructor).WATCH_POPUP_TIMEOUT;
+        
 
         return new Promise((resolve, reject) => {
           if (typeof popup.focus === 'function') {
@@ -24,6 +27,8 @@ export class OauthBrowser extends Oauth {
           }
 
           setTimeout(function watchPopup() {
+
+
             try {
               if (popup.closed) {
                 return reject(new Error(`The "${options.providerName}" sign in flow was canceled`));

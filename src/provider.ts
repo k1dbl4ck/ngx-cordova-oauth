@@ -26,7 +26,7 @@ export class OAuthProvider implements IOauthProvider {
     }
 
     get name() {
-        return this.constructor.name || this.authUrl;
+        return this.constructor['name'] || this.authUrl;
     }
 
     parseResponseInUrl(url) {
